@@ -486,6 +486,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/m11q/proprietary/vendor/etc/init/init.nfc.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nfc.samsung.rc \
     vendor/samsung/m11q/proprietary/vendor/etc/init/init.nfc.vendor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nfc.vendor.rc \
     vendor/samsung/m11q/proprietary/vendor/etc/init/init.qti.fm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.fm.rc \
+    vendor/samsung/m11q/proprietary/vendor/etc/init/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \
     vendor/samsung/m11q/proprietary/vendor/etc/init/init.vendor.onebinary.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.onebinary.rc \
     vendor/samsung/m11q/proprietary/vendor/etc/init/init.vendor.rilchip.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilchip.rc \
     vendor/samsung/m11q/proprietary/vendor/etc/init/init.vendor.rilcommon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilcommon.rc \
@@ -3454,7 +3455,6 @@ PRODUCT_PACKAGES += \
     libaudioparsers \
     TimeService \
     audiosphere \
-    izat.xt.srv \
     vendor.qti.hardware.soter-V1.0-java \
     android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.gnss@2.1-service-qti \
