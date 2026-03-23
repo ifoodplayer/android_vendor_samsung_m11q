@@ -6,6 +6,26 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+	name: "libaudioparsers",
+	owner: "samsung",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libaudioparsers.so"],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libaudioparsers.so"],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libsdm-disp-vndapis",
 	owner: "samsung",
 	strip: {
@@ -26,14 +46,14 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libaudioparsers",
+	name: "libril",
 	owner: "samsung",
 	strip: {
 		none: true,
 	},
 	target: {
 		android_arm: {
-			srcs: ["proprietary/vendor/lib/libaudioparsers.so"],
+			srcs: ["proprietary/vendor/lib/libril.so"],
 		},
 	},
 	compile_multilib: "32",
@@ -61,6 +81,13 @@ dex_import {
 }
 
 dex_import {
+	name: "izat.xt.srv",
+	owner: "samsung",
+	jars: ["proprietary/system_ext/framework/izat.xt.srv.jar"],
+	system_ext_specific: true,
+}
+
+dex_import {
 	name: "vendor.qti.hardware.soter-V1.0-java",
 	owner: "samsung",
 	jars: ["proprietary/system_ext/framework/vendor.qti.hardware.soter-V1.0-java.jar"],
@@ -80,15 +107,6 @@ prebuilt_etc_xml {
 	name: "android.hardware.gnss@2.1-service-qti",
 	owner: "samsung",
 	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	soc_specific: true,
-}
-
-prebuilt_etc_xml {
-	name: "android.hardware.health@2.1-samsung",
-	owner: "samsung",
-	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.health@2.1-samsung.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
